@@ -1,0 +1,90 @@
+<html>
+<title>Welcome</title>
+<head>
+<style>
+
+table{
+font-family:Trebuchet MS;
+
+padding-left:850px;
+padding-top:200px;
+}
+h1{
+font-family:Trebuchet MS;
+
+padding-left:825px;
+padding-top:100px;
+}
+#button{
+
+font-family:Trebuchet MS;
+display:inline-block;
+
+}
+</style>
+</head>
+<body bgcolor="#9b59b6"> 
+<h1><font color="white">Welcome Admin!</font></h1>
+<form action="http://localhost/new_project/admin_login.php" method="post" name="f1">
+<table border="0">
+<tr>
+	<th align="left"><font color="white">Username</font></th>
+	</tr>
+	<tr>
+	<td align="center"><input type="text" name="user_name"/></td>
+	</tr>
+	<tr>
+	<th align="left"><font color="white">Password</font></th>
+	</tr>
+	<tr>
+	<td align="center"><input type="password" name="password"/></td>
+	</tr>
+	<tr>
+		<td align="center"><button type="submit" id="button" value="Login" onclick="return validate();" name="login">LOG-IN</button></td>
+	</tr>
+	
+	</table>
+	<script>
+	function validate(){
+var user=f1.user_name;
+var pass=f1.password;
+
+if(user.value.length==0 && pass.value.length==0){
+
+alert("All fields are required");
+user.focus();
+return false;
+}
+
+else if(pass.value.length==null || pass.value.length==""){
+console.log(typeof(pass.name.value));
+alert("Please enter password");
+pass.focus();
+return false;
+}
+else if(user.value.length==0){
+
+alert("Please enter username");
+user.focus();
+return false;
+}
+else if(user.value!="admin")
+{
+alert("Please enter valid username");
+user.focus();
+return false;
+}
+else if(pass.value!="admin")
+{
+alert("Please enter valid password");
+pass.focus();
+return false;
+}
+else{
+return true;
+}
+}
+</script>
+	
+</body>
+</html>

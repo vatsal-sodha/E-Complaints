@@ -1,0 +1,76 @@
+<html>
+<title>Welcome</title>
+<head>
+<style>
+table{
+font-family:Trebuchet MS;
+
+padding-left:850px;
+padding-top:200px;
+}
+
+h2{
+font-family:Trebuchet MS;
+
+padding-left:800px;
+padding-top:100px;
+}
+</style>
+</head>
+<body bgcolor="#7f8c8d">
+<form action="http://localhost/new_project/user_login.php" method="post" name="f1">
+<h2 ><font color="white">You have succesfully logged out!</font></h2>
+<table border="0" >
+<tr>
+	<td align="left"><font color="white">Username</font></td>
+	</tr>
+	<tr>
+	<td align="center"><input type="text" name="user_name"/></td>
+	</tr>
+	<tr>
+	<td align=""><font color="white">Password</font></td>
+	</tr>
+	<tr>
+	<td align="center"><input type="password" name="password"/></td>
+	</tr>
+	<tr>
+		<td align="center"><button type="submit" value="Login" onclick="return validate();" name="login">Login</button>
+		<td><input type="button" align="center" onclick="location.href='home.html'" name="login" value="Home" /></td>
+	</tr>
+	<tr>
+		<td align="left"><a href="forgot_password.html"/><font color="white">Forgot password</font></a>
+	</table>
+	
+	<script>
+	function validate(){
+var user=f1.user_name;
+var pass=f1.password;
+
+if(user.value.length==0 && pass.value.length==0){
+
+alert("All fields are required");
+user.focus();
+return false;
+}
+
+else if(pass.value.length==null || pass.value.length==""){
+console.log(typeof(pass.name.value));
+alert("Please enter password");
+pass.focus();
+return false;
+}
+else if(user.value.length==0){
+
+alert("Please enter username");
+user.focus();
+return false;
+}
+else{
+return true;
+}
+}
+</script>
+	
+</body>
+</html>
+

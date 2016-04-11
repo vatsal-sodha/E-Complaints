@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>Welcome</title>
+<head>
+</head>
+<body bgcolor="#e74c3c">
+<style>
+table{
+font-family:Trebuchet MS;
+
+padding-left:850px;
+padding-top:200px;
+}
+h1{
+font-family:Trebuchet MS;
+
+padding-left:825px;
+padding-top:100px;
+}
+</style>
+<form action="http://localhost/new_project/add_police_station.php" method="post" name="f1">
+<table border="0">
+<tr>
+	<th align="left"><font color="white">Police Station Name</th>
+	</tr>
+	<tr>
+	<td align="center"><input type="text" name="name"/></td>
+	</tr>
+	<tr>
+	<td align="left"><font color="white">Police Station Id</td></font>
+	</tr>
+	<tr>
+	<td align="center"><input type="text" name="id1"/></td>
+	</tr>
+	
+	<tr>
+	<td><button type="submit" value="Add User" onclick="return validate();">Add Station</button></td>
+	<td><button type="button" onclick="location.href='http://localhost/project/admin_login.php'" value="Dashboard">Dashboard</td></button>
+	</tr>
+	
+	</table>
+	</form>
+<script>
+function validate(){
+var user=f1.name;
+var id=f1.id1;
+if(user.value.length==0 && id.value.length==0){
+
+alert("All fields are required");
+user.focus();
+return false;
+}
+
+else if(user.value.length==0){
+
+alert("Please enter username");
+user.focus();
+return false;
+}
+else if(id.value.length==null||id.value.length==""){
+alert("please enter user id");
+return false;
+}
+else{
+return true;
+}
+}
+</script>
+	
+</body>
+</html>
+

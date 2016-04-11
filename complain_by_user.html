@@ -1,0 +1,55 @@
+<html>
+<head>
+<script>
+function validateForm() {
+    var x = document.forms["report"]["user_name"].value;
+	var el = document.getElementById('complain');
+	  var value = el.value;
+
+	var police_station_id = document.getElementById("complain");
+    if (x == null || x == "") {
+        alert("id must be filled out");
+        return false;
+}
+  
+      if (value == null || value === '' || value.indexOf('\n') > 0) {
+        alert("Please Write Problem Description");
+        return false;
+    }
+else {
+        return true;
+    		
+    }
+}
+</script>
+<title>Report Page</title>
+<style>
+
+table{
+font-family:Trebuchet MS;
+color:white;
+padding-left:850px;
+padding-top:200px;
+}
+</style>
+<body bgcolor="#34495e">
+<form name="report" action="http://localhost/new_project/complain_by_user.php"
+onsubmit="return validateForm()" method="post">
+<table border=0>
+<tr>
+<td>User Name :</td>
+<td><input type="text" name="user_name"/></td>
+</tr>
+<tr>
+<td>Complain</td>
+<td><textarea name="complain" maxlength="250" id="complain"rows="10" cols="50" placeholder="Maximumm 250 words"></textarea>
+</tr>
+<tr>
+<td><input type="submit" value="submit"></td>
+
+<td ><input type="button" onClick="location.href='logout.html'" value="Logout" name="logout"></td>
+<td><input type="button" onClick="location.href='welcome.php'" value="Dashboard"></td>
+</tr>
+</body>
+</head>
+</html>

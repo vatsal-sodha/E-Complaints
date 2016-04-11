@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<title>Welcome</title>
+<head>
+<style>
+table{
+font-family:Trebuchet MS;
+
+padding-left:850px;
+padding-top:200px;
+}
+h1{
+font-family:Trebuchet MS;
+
+padding-left:825px;
+padding-top:100px;
+}
+</style>
+</head>
+<body bgcolor="#7f8c8d">
+<h1><font color="white">Welcome Admin!</font></h1>
+<form action="http://localhost/new_project/add_user.php" method="post" name="f1">
+<table border="0" >
+<tr>
+	<th align="left"><font color="white">Username</font></th>
+	</tr>
+	<tr>
+	<td align="center"><input type="text" name="user_name"/></td>
+	</tr>
+	<tr>
+	<td align=""><font color="white">Password</font></td>
+	</tr>
+	<tr>
+	<td align="center"><input type="password" name="password"/></td>
+	</tr>
+	
+	<tr>
+	<td align=""><font color="white">UserId</font></td>
+	</tr>
+	<tr>
+	<td align="center"><input type="text" name="user_id"/></td>
+	</tr>
+	
+	<tr>
+	<td align=""><font color="white">Email Id</font></td>
+	</tr>
+	<tr>
+	<td align="center"><input type="text" name="email"/></td>
+	</tr>
+	<tr>
+	<td align="center"><button type="submit" value="Add User" onclick="return validate();">Add user</button></td>
+	<td align="center"><button type="button" onclick="location.href='http://localhost/new_project/admin_login.php'" value="Dashboard">Dashboard</td></button>
+	</tr>
+	
+	</table>
+	</form>
+<script>
+function validate(){
+var user=f1.user_name;
+var pass=f1.password;
+var id=f1.user_id;
+var email=f1.email;
+if(user.value.length==0 && pass.value.length==0 && id.value.length==0){//email.value.length==0){
+
+alert("All fields are required");
+user.focus();
+return false;
+}
+
+else if(pass.value.length==null || pass.value.length==""){
+console.log(typeof(pass.name.value));
+alert("Please enter password");
+pass.focus();
+return false;
+}
+else if(user.value.length==0){
+
+alert("Please enter username");
+user.focus();
+return false;
+}
+else if(id.value.length==null||id.value.length==""){
+alert("please enter user id");
+id.focus();
+return false;
+}
+else if(email.value.length==null || email.value.length==""||email.value.length==0){
+alert("Please Enter Email id");
+ema1il.focus();
+return false;
+}
+else if(email.value.length!=0)
+{
+	apos=email.value.indexOf("@");
+	dpos=email.value.lastIndexOf(".");
+	if(apos<1 || dpos-apos<2){
+	alert("Please enter valid email address");
+	email.focus;
+	return false;
+	}
+	return true;
+}
+else{
+return true;
+}
+}
+</script>
+	
+</body>
+</html>
+
